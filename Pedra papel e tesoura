@@ -1,0 +1,116 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPsYqhm1e7DpUhj5lsLNK+R",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/robertarodolfo/Ps-for_code/blob/main/Pedra%20papel%20e%20tesoura\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from random import choice\n",
+        "\n",
+        "def jogo():\n",
+        "    pontos_jogador = 0\n",
+        "    pontos_cpu = 0\n",
+        "    opcoes = [\"pedra\", \"papel\", \"tesoura\"]\n",
+        "\n",
+        "    for _ in range(15):\n",
+        "        computador = choice(opcoes)\n",
+        "        jogador = input(\"Pedra, Papel ou Tesoura?\\t\").strip().lower()\n",
+        "\n",
+        "        if jogador == computador:\n",
+        "            print(\"Empate!\")\n",
+        "        elif jogador == \"pedra\":\n",
+        "            if computador == \"papel\":\n",
+        "                print(\"Você perdeu!\", computador.capitalize(), \"embrulha\", jogador)\n",
+        "                pontos_cpu += 1\n",
+        "            else:\n",
+        "                print(\"Você venceu!!!\", jogador.capitalize(), \"esmaga\", computador)\n",
+        "                pontos_jogador += 1\n",
+        "        elif jogador == \"papel\":\n",
+        "            if computador == \"tesoura\":\n",
+        "                print(\"Você perdeu!\", computador.capitalize(), \"corta\", jogador)\n",
+        "                pontos_cpu += 1\n",
+        "            else:\n",
+        "                print(\"Você venceu!!!\", jogador.capitalize(), \"embrulha\", computador)\n",
+        "                pontos_jogador += 1\n",
+        "        elif jogador == \"tesoura\":\n",
+        "            if computador == \"pedra\":\n",
+        "                print(\"Você perdeu...\", computador.capitalize(), \"esmaga\", jogador)\n",
+        "                pontos_cpu += 1\n",
+        "            else:\n",
+        "                print(\"Você venceu!!\", jogador.capitalize(), \"corta\", computador)\n",
+        "                pontos_jogador += 1\n",
+        "        else:\n",
+        "            print(\"Essa não é uma jogada válida. Por favor, verifique a ortografia!\")\n",
+        "\n",
+        "        print(f\"\\nPlacar --> Pontos do Jogador: {pontos_jogador}; Pontos da Máquina: {pontos_cpu}\\n\\n\")\n",
+        "\n",
+        "    # Apenas o placar final\n",
+        "    print(f\"Placar Final: Jogador {pontos_jogador} x {pontos_cpu} Máquina\")\n",
+        "\n",
+        "# Executa o jogo\n",
+        "jogo()\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 425
+        },
+        "id": "UXcqV966FIos",
+        "outputId": "9e3f6558-18c6-499f-cff2-9b7136e4fa3c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Pedra, Papel ou Tesoura?\tpedra\n",
+            "Você venceu!!! Pedra esmaga tesoura\n",
+            "\n",
+            "Placar --> Pontos do Jogador: 1; Pontos da Máquina: 0\n",
+            "\n",
+            "\n"
+          ]
+        },
+        {
+          "output_type": "error",
+          "ename": "KeyboardInterrupt",
+          "evalue": "Interrupted by user",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mKeyboardInterrupt\u001b[0m                         Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-22-3c7025f4ca36>\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[1;32m     42\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     43\u001b[0m \u001b[0;31m# Executa o jogo\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 44\u001b[0;31m \u001b[0mjogo\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;32m<ipython-input-22-3c7025f4ca36>\u001b[0m in \u001b[0;36mjogo\u001b[0;34m()\u001b[0m\n\u001b[1;32m      8\u001b[0m     \u001b[0;32mfor\u001b[0m \u001b[0m_\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mrange\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;36m15\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      9\u001b[0m         \u001b[0mcomputador\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mchoice\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mopcoes\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 10\u001b[0;31m         \u001b[0mjogador\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0minput\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Pedra, Papel ou Tesoura?\\t\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mstrip\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mlower\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     11\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     12\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mjogador\u001b[0m \u001b[0;34m==\u001b[0m \u001b[0mcomputador\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py\u001b[0m in \u001b[0;36mraw_input\u001b[0;34m(self, prompt)\u001b[0m\n\u001b[1;32m   1175\u001b[0m                 \u001b[0;34m\"raw_input was called, but this frontend does not support input requests.\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1176\u001b[0m             )\n\u001b[0;32m-> 1177\u001b[0;31m         return self._input_request(\n\u001b[0m\u001b[1;32m   1178\u001b[0m             \u001b[0mstr\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mprompt\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1179\u001b[0m             \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_parent_ident\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m\"shell\"\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py\u001b[0m in \u001b[0;36m_input_request\u001b[0;34m(self, prompt, ident, parent, password)\u001b[0m\n\u001b[1;32m   1217\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mKeyboardInterrupt\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1218\u001b[0m                 \u001b[0;31m# re-raise KeyboardInterrupt, to truncate traceback\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1219\u001b[0;31m                 \u001b[0;32mraise\u001b[0m \u001b[0mKeyboardInterrupt\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Interrupted by user\"\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;32mfrom\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1220\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mException\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1221\u001b[0m                 \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mlog\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mwarning\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Invalid Message:\"\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mexc_info\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;32mTrue\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mKeyboardInterrupt\u001b[0m: Interrupted by user"
+          ]
+        }
+      ]
+    }
+  ]
+}
